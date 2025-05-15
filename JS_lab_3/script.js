@@ -20,6 +20,7 @@ user.name = "Pete";
 // Задание 1e
 delete user.name;
 
+
 // Задание 2
 
 console.log("Задание 2");
@@ -35,6 +36,7 @@ for (let i in myBrowser) {
 
 console.log();
 
+
 // Задание 3
 
 console.log("Задание 3");
@@ -49,6 +51,7 @@ function isEmpty(obj) {
 console.log(isEmpty(user));
 console.log();
 
+
 // Задание 4
 
 const user1 = {
@@ -59,6 +62,7 @@ user1.name = "Pete"; // Изменение свойств объекта
 
 // user1 = 123; // Переопределение переменной, что невозможно
 
+
 // Задание 5
 
 function multiplyNumeric(obj) {
@@ -68,6 +72,7 @@ function multiplyNumeric(obj) {
         }
     }
 }
+
 
 // Задание 6
 
@@ -90,6 +95,7 @@ calculator.read(3, 5);
 console.log(calculator.sum());
 console.log(calculator.mul());
 console.log();
+
 
 // Задание 7
 
@@ -114,6 +120,7 @@ let ladder = {
 ladder.up().up().down().up().down().showStep();
 console.log();
 
+
 // Задание 8
 
 console.log("Задание 8");
@@ -122,7 +129,7 @@ function Browser(name, version) {
     this.name = name;
     this.version = version;
     this.aboutBrowser = function() {
-        console.log(`Название ${this.name}, версия ${this.version}`)
+        console.log(`Название ${this.name}, версия ${this.version}`);
     };
 }
 
@@ -137,6 +144,7 @@ console.log();
 myBrowser1.aboutBrowser();
 
 console.log();
+
 
 // Задание 9
 
@@ -157,6 +165,7 @@ console.log();
 // let employee1 = employee("Иван", "IT", "8-800-555-35-35", 50000);
 // employee1.toString()
 // console.log();
+
 
 // Задание 10
 
@@ -181,6 +190,7 @@ console.log(calculator1.sum());
 console.log(calculator1.mul());
 console.log();
 
+
 // Задание 11
 
 console.log("Задание 11");
@@ -197,6 +207,7 @@ console.log(accumulator.value);
 accumulator.read(1);
 console.log(accumulator.value);
 console.log();
+
 
 // Работа с прототипами
 // Задание 1
@@ -227,6 +238,7 @@ console.log(rabbit.jumps); // Так как, мы удалили свойств�
 
 console.log();
 
+
 // Задание 2
 
 console.log("Задание 2");
@@ -246,6 +258,7 @@ rabbit_.eat();
 console.log(animal_.full);
 console.log(rabbit_.full); // Объект rabbit_ не имеет свойства full, но при вызове метода eat() у объекта rabbit_ создается свойство full
 console.log();
+
 
 // Задание 3
 
@@ -274,6 +287,7 @@ console.log(speedy.stomach);
 console.log(lazy.stomach); // При вызове метода eat() у объекта speedy, создается свойство stomach у объекта speedy и добавляется элемент в массив
 console.log();
 
+
 // Задание 4
 
 console.log("Задание 4");
@@ -286,7 +300,7 @@ String.prototype.write = stringWrite;
 
 function stringWrite() {
     console.log("Цвет текста: " + this.color);
-    console.log("Текст: " + this.toString())
+    console.log("Текст: " + this.toString());
     console.log("Размер шрифта: " + this.size);
 }
 
@@ -294,10 +308,12 @@ let s = new String("Это строка");
 s.color = "red";
 s.size = 16;
 s.write();
+
 let s2 = new String("Вторая строка");
-s2. write();
+s2.write();
 
 console.log();
+
 
 // Задание 5
 
@@ -317,6 +333,7 @@ delete Rabbit.prototype.eats;       // Удаляем eats из прототип
 
 console.log(rabbit1.eats);
 console.log();
+
 
 // Классы
 // Задание 1
@@ -341,6 +358,7 @@ let clock = new Clock(12, 30, 45);
 clock.showTime();
 console.log();
 
+
 // Задание 2
 
 console.log("Задание 2");
@@ -361,6 +379,7 @@ class Rabbit_ extends Animal {
 let rabbit1_ = new Rabbit_("Белый кролик");
 console.log(rabbit1_.name);
 console.log();
+
 
 // Задание 3
 
@@ -415,6 +434,7 @@ class ExtendedClock extends Clock_ {
 
 let extendedClock = new ExtendedClock("h m s", 2000);
 //extendedClock.start();
+
 
 // Задание 4
 
