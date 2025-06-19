@@ -1,0 +1,10 @@
+{
+  "name": "Lab_7_for_YAP",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "private": true
+}

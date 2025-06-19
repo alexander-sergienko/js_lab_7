@@ -1,0 +1,160 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+}
+
+#main-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    max-width: 800px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+h1, h2 {
+    color: #333;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+}
+
+#start-registration {
+    background-color: #007bff;
+    color: white;
+    display: block;
+    margin: 20px auto;
+}
+
+#start-registration:hover {
+    background-color: #0056b3;
+}
+
+/* Стили для формы шагов */
+.registration-step {
+    padding: 20px;
+    border: 1px solid #eee;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #555;
+    font-weight: bold;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="tel"],
+.form-group select {
+    width: calc(100% - 22px); /* Учитываем padding и border */
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-size: 1em;
+}
+
+.form-actions {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.form-actions button {
+    margin-left: 10px;
+}
+
+.form-actions button#cancel-step1,
+.form-actions button#back-step2,
+.form-actions button#back-step3 {
+    background-color: #dc3545;
+    color: white;
+}
+
+.form-actions button#cancel-step1:hover,
+.form-actions button#back-step2:hover,
+.form-actions button#back-step3:hover {
+    background-color: #c82333;
+}
+
+.form-actions button:not(#cancel-step1):not(#back-step2):not(#back-step3) {
+    background-color: #28a745;
+    color: white;
+}
+
+.form-actions button:not(#cancel-step1):not(#back-step2):not(#back-step3):hover:not([disabled]) {
+    background-color: #218838;
+}
+
+.form-actions button:disabled {
+    background-color: #6c757d;
+    cursor: not-allowed;
+}
+
+/* Стили для полей ввода номера карты */
+.card-number-inputs {
+    display: flex;
+    gap: 10px;
+}
+
+.card-number-inputs input {
+    width: 80px; /* Фиксированная ширина для каждой части */
+    text-align: center;
+}
+
+/* Стили для индикатора прогресса */
+.progress-indicator-container {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    width: 100%;
+    max-width: 500px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #e9ecef;
+    border-radius: 5px;
+    height: 10px;
+    position: relative;
+}
+
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background-color: #007bff;
+    border-radius: 5px;
+    transition: width 0.5s ease-in-out;
+}
+
+.progress-labels {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+    font-size: 0.8em;
+    color: #666;
+}
+
+.progress-labels span {
+    position: relative;
+    /* Можно добавить кружки над лейблами, если нужно */
+}

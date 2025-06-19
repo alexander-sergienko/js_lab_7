@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Координаты клика</title>
+  <style>
+    body {
+      height: 100vh; /* Увеличиваем высоту body, чтобы было куда кликать */
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-family: sans-serif;
+      background-color: #f0f0f0;
+    }
+    #coordinates {
+      margin-top: 20px;
+      font-size: 1.2em;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+<h1>Задание 3: Координаты нажатия мыши</h1>
+<p>Кликните в любом месте страницы, чтобы увидеть координаты.</p>
+<div id="coordinates"></div>
+
+<script>
+  // Получаем элемент, куда будем выводить координаты
+  let coordinatesDisplay = document.getElementById('coordinates');
+
+  // Добавляем обработчик события 'click' ко всему документу
+  // e (event) - это объект события, который автоматически передается в функцию
+  document.addEventListener('click', function(e) {
+    // e.clientX - координата X относительно видимой части окна браузера (viewport)
+    // e.clientY - координата Y относительно видимой части окна браузера (viewport)
+    let x = e.clientX;
+    let y = e.clientY;
+
+    // Выводим координаты на страницу
+    coordinatesDisplay.textContent = `Координаты клика: X = ${x}, Y = ${y}`;
+    console.log(`Клик: X = ${x}, Y = ${y}`); // Также выводим в консоль
+  });
+</script>
+</body>
+</html>

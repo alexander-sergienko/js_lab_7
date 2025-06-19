@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Щелчок по странице</title>
+  <style>
+    body {
+      height: 100vh; /* Занимаем всю высоту, чтобы было куда кликать */
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: sans-serif;
+      background-color: #e0f7fa;
+    }
+  </style>
+</head>
+<body>
+<h1>Задание 4: `alert()` при щелчке</h1>
+<p>Кликните в любом месте страницы.</p>
+
+<script>
+  // Функция, которая будет вызываться при щелчке
+  function showAlertOnClick() {
+    alert("Был щелчок!"); //
+  }
+
+  // Добавляем обработчик события 'click' ко всему документу (странице)
+  document.addEventListener('click', showAlertOnClick);
+</script>
+</body>
+</html>

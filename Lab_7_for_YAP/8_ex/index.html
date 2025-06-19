@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Регистрация - Лабораторная 7, Задание 8</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+
+<section id="loader-section" style="display: flex; justify-content: center; align-items: center; min-height: 100vh; flex-direction: column;">
+    <div class="loader-container">
+        <div class="loader-bar"></div>
+    </div>
+    <p>Загрузка...</p>
+</section>
+
+<link rel="stylesheet" href="loader.css">
+<script src="loader.js"></script>
+
+<main id="main-content" style="display: none; padding: 20px;">
+    <h1>Добро пожаловать!</h1>
+    <p>Для начала работы пройдите простую регистрацию.</p>
+    <button id="start-registration">Начать регистрацию</button>
+
+    <div class="progress-indicator-container">
+        <div class="progress-bar" id="registration-progress"></div>
+        <div class="progress-labels">
+            <span>Шаг 1</span>
+            <span>Шаг 2</span>
+            <span>Шаг 3</span>
+            <span>Готово</span>
+        </div>
+    </div>
+
+    <div id="registration-frame-container" style="margin-top: 20px; border: 1px solid #ccc; padding: 20px; max-width: 500px; margin-left: auto; margin-right: auto; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1);">
+        <section id="initial-frame">
+            <h2>Начальная страница</h2>
+            <p>Нажмите "Начать регистрацию", чтобы продолжить.</p>
+        </section>
+
+        <section id="frame_1" class="registration-step" style="display: none;">
+            <h2>Шаг 1: Персональные данные</h2>
+            <form id="personal-data-form">
+                <div class="form-group">
+                    <label for="firstName">Имя:</label>
+                    <input type="text" id="firstName" required>
+                </div>
+                <div class="form-group">
+                    <label for="lastName">Фамилия:</label>
+                    <input type="text" id="lastName" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">E-mail:</label>
+                    <input type="email" id="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Пароль:</label>
+                    <input type="password" id="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">Подтвердите пароль:</label>
+                    <input type="password" id="confirmPassword" required>
+                </div>
+                <div class="form-group">
+                    <label for="country">Страна:</label>
+                    <select id="country" required></select> </div>
+                <div class="form-actions">
+                    <button type="button" id="cancel-step1">Отмена</button>
+                    <button type="button" id="next-step1" disabled>Далее</button>
+                </div>
+            </form>
+        </section>
+
+        <section id="frame_2" class="registration-step" style="display: none;">
+            <h2>Шаг 2: Телефонный номер</h2>
+            <div id="phone-input-section">
+                <div class="form-group">
+                    <label for="phoneNumber">Номер телефона:</label>
+                    <input type="tel" id="phoneNumber" placeholder="+XXX-XX-XXX-XX-XX" required>
+                </div>
+                <div class="form-actions">
+                    <button type="button" id="back-step2">Назад</button>
+                    <button type="button" id="send-code">Отправить</button>
+                </div>
+            </div>
+
+            <div id="verification-code-section" style="display: none; margin-top: 20px;">
+                <p>Введите 4-значный код из SMS:</p>
+                <div class="form-group">
+                    <label for="verificationCode">Код:</label>
+                    <input type="text" id="verificationCode" maxlength="4" pattern="[0-9]{4}" required>
+                </div>
+                <div class="form-actions">
+                    <button type="button" id="check-code">Проверить</button>
+                    <button type="button" id="next-step2" disabled>Далее</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="frame_3" class="registration-step" style="display: none;">
+            <h2>Шаг 3: Метод оплаты</h2>
+            <form id="payment-form">
+                <div class="form-group">
+                    <label>Номер карты:</label>
+                    <div class="card-number-inputs">
+                        <input type="text" class="card-part" maxlength="4" placeholder="XXXX">
+                        <input type="text" class="card-part" maxlength="4" placeholder="XXXX">
+                        <input type="text" class="card-part" maxlength="4" placeholder="XXXX">
+                        <input type="text" class="card-part" maxlength="4" placeholder="XXXX">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="cardName">Имя на карте:</label>
+                    <input type="text" id="cardName" required>
+                </div>
+                <div class="form-group">
+                    <label for="expiryDate">Срок действия (ММ/ГГ):</label>
+                    <input type="text" id="expiryDate" placeholder="ММ/ГГ" maxlength="5" required>
+                </div>
+                <div class="form-group">
+                    <label for="cvv">CVV:</label>
+                    <input type="text" id="cvv" maxlength="3" required>
+                </div>
+                <div class="form-actions">
+                    <button type="button" id="back-step3">Назад</button>
+                    <button type="button" id="finish-registration" disabled>Завершить</button>
+                </div>
+            </form>
+        </section>
+
+        <section id="final-frame" class="registration-step" style="display: none; text-align: center;">
+            <h2>Регистрация успешно завершена!</h2>
+            <p>Добро пожаловать!</p>
+            <button type="button" id="reset-registration">Начать заново</button>
+        </section>
+    </div>
+</main>
+
+<script src="registration.js"></script>
+</body>
+</html>

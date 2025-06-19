@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Кнопка скрывает себя</title>
+</head>
+<body>
+<h1>Задание 2: Кнопка скрывает себя</h1>
+
+<button id="hideMeButton" onclick="hideSelf()">Нажми меня, чтобы исчезнуть</button>
+
+<script>
+  // Функция, которая скрывает кнопку
+  function hideSelf() {
+    // Получаем элемент кнопки по его ID
+    let buttonToHide = document.getElementById('hideMeButton');
+
+    // Проверяем, существует ли кнопка, прежде чем пытаться ее скрыть
+    if (buttonToHide) {
+      // Изменяем стиль display на 'none', чтобы скрыть элемент
+      buttonToHide.style.display = 'none';
+      alert("Кнопка скрыта!");
+    } else {
+      alert("Ошибка: Кнопка с id 'hideMeButton' не найдена.");
+    }
+  }
+</script>
+</body>
+</html>

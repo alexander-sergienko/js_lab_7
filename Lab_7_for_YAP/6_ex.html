@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Фамилия Имя - Средняя зарплата</title> <style>
+  body {
+    font-family: sans-serif;
+    margin: 20px;
+  }
+  .form-group {
+    margin-bottom: 10px;
+  }
+  label {
+    display: inline-block;
+    width: 80px; /* Фиксированная ширина для выравнивания */
+  }
+  input[type="number"], input[type="text"] {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  button {
+    padding: 10px 15px;
+    margin-right: 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 4px;
+  }
+  button:first-of-type {
+    background-color: #007bff;
+    color: white;
+  }
+  button:last-of-type {
+    background-color: #6c757d;
+    color: white;
+  }
+</style>
+</head>
+<body>
+<h1>Введите начисленную зарплату за следующие месяцы</h1>
+
+<form id="salaryForm">
+  <div class="form-group">
+    <label for="janSalary">Январь:</label>
+    <input type="number" id="janSalary" value="300">
+  </div>
+  <div class="form-group">
+    <label for="febSalary">Февраль:</label>
+    <input type="number" id="febSalary" value="200">
+  </div>
+  <div class="form-group">
+    <label for="marSalary">Март:</label>
+    <input type="number" id="marSalary" value="500">
+  </div>
+  <div class="form-group">
+    <label for="aprSalary">Апрель:</label>
+    <input type="number" id="aprSalary" value="250">
+  </div>
+  <div class="form-group">
+    <label for="maySalary">Май:</label>
+    <input type="number" id="maySalary" value="350">
+  </div>
+  <div class="form-group">
+    <label for="junSalary">Июнь:</label>
+    <input type="number" id="junSalary" value="500">
+  </div>
+
+  <div class="form-group">
+    <label for="avgSalary">Средняя зарплата:</label>
+    <input type="text" id="avgSalary" value="" readonly>
+  </div>
+
+  <button type="button" onclick="calculateAverageSalary()">Вычислить</button>
+  <button type="reset" onclick="resetForm()">Обновить</button>
+</form>
+
+<script>
+  // Функция для вычисления средней зарплаты
+  function calculateAverageSalary() {
+    // Получаем значения из всех полей ввода.
+    // Используем parseFloat для преобразования в числа, так как значения input - это строки.
+    // Если поле пустое или не число, parseFloat вернет NaN, тогда используем 0.
+    let jan = parseFloat(document.getElementById('janSalary').value) || 0;
+    let feb = parseFloat(document.getElementById('febSalary').value) || 0;
+    let mar = parseFloat(document.getElementById('marSalary').value) || 0;
+    let apr = parseFloat(document.getElementById('aprSalary').value) || 0;
+    let may = parseFloat(document.getElementById('maySalary').value) || 0;
+    let jun = parseFloat(document.getElementById('junSalary').value) || 0;
+
+    // Считаем сумму зарплат
+    let totalSalary = jan + feb + mar + apr + may + jun;
+    // Количество месяцев - 6
+    let numberOfMonths = 6;
+
+    // Вычисляем среднюю зарплату
+    let averageSalary = totalSalary / numberOfMonths;
+
+    // Выводим результат в поле "Средняя зарплата", округляя до двух знаков после запятой
+    document.getElementById('avgSalary').value = averageSalary.toFixed(2);
+  }
+
+  // Функция для сброса формы к начальным значениям, как в образце
+  function resetForm() {
+    document.getElementById('janSalary').value = '300';
+    document.getElementById('febSalary').value = '200';
+    document.getElementById('marSalary').value = '500';
+    document.getElementById('aprSalary').value = '250';
+    document.getElementById('maySalary').value = '350';
+    document.getElementById('junSalary').value = '500';
+    document.getElementById('avgSalary').value = '350';
+  }
+</script>
+</body>
+</html>

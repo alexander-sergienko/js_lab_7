@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Изменение текста в поле</title>
+</head>
+<body>
+<h1>Задание 5: Реакция на изменение текстового поля</h1>
+
+<label for="myInputField">Введите текст:</label>
+<input type="text" id="myInputField" onchange="textChanged()">
+
+<script>
+  // Функция, которая будет вызываться при изменении текста в поле ввода
+  function textChanged() {
+    // alert("Текст был изменен!!!"); //
+    // Вместо нового окна alert, можно использовать console.log или
+    // вывести сообщение на страницу для лучшего пользовательского опыта,
+    // но согласно заданию - новое окно alert.
+    alert("Текст был изменен!!!");
+  }
+</script>
+</body>
+</html>

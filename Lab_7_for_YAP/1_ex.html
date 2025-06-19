@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Скрыть div</title>
+  <style>
+    /* Немного стиля, чтобы div был виден */
+    #text {
+      width: 200px;
+      height: 100px;
+      background-color: lightblue;
+      border: 1px solid blue;
+      margin-top: 20px;
+      display: flex; /* Используем flexbox для центрирования текста */
+      justify-content: center;
+      align-items: center;
+      font-size: 1.2em;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+<h1>Задание 1: Скрытие элемента div</h1>
+
+<button onclick="hideDiv()">Скрыть элемент div</button>
+
+<div id="text">
+  Это элемент div, который исчезнет.
+</div>
+
+<script>
+  // Функция для скрытия элемента div
+  function hideDiv() {
+    // Получаем элемент div по его id
+    let textDiv = document.getElementById('text');
+
+    // Проверяем, существует ли элемент, прежде чем пытаться его скрыть
+    if (textDiv) {
+      // Изменяем стиль display на 'none', чтобы скрыть элемент
+      textDiv.style.display = 'none';
+      alert("Элемент div скрыт!");
+    } else {
+      alert("Элемент div с id 'text' не найден.");
+    }
+  }
+</script>
+</body>
+</html>
